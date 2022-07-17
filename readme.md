@@ -146,4 +146,5 @@ btn.addEventListener('click', (event) => {
 
 ### Note
 
-Asyn function always return a promise
+- Asyn function always return a promise
+- try catch is common ways to handle excepion when using async wait
