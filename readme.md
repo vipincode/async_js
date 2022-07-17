@@ -19,16 +19,15 @@
 - rejected when is reject
 - Both [resolve(), rejected()] of these function provided by constructor.
 
-`
+```
 const breakfastPromise = new Promise((resolve, rejected) => {
-
-_This is async task_
-setTimeout(() => {
-resolve('Your order is ready commin and get it!');
-}, 3000);
+  _This is async task_
+  setTimeout(() => {
+  resolve('Your order is ready commin and get it!');
+  }, 3000);
 });
 
-`
+```
 
 ### when this async task completed successfully, it going to return a resolve promise object with some data.
 
@@ -39,4 +38,14 @@ resolve('Your order is ready commin and get it!');
   _Example_
   `breakfastPromise.then((val) => console.log(val)); `
 
-- what ever we passed inside resolve method is available to inside `then()`
+## note
+
+- what ever we passed inside `resolve()` method is available to inside `then()`
+
+### Reject method
+
+```
+breakfastPromise
+  .then((val) => console.log(val))
+  .catch((err) => console.log(err));
+```
