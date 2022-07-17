@@ -88,3 +88,26 @@ btn.addEventListener('click', (event) => {
     .finally(() => event.target.remove());
 });
 ```
+
+### fetch mthod: itself return a promise
+
+once fetch make the request and data finish loading the fetch promise is `fullfiled`
+
+- its also going to return a respone object containing inormaton about the response.
+- to access data we nees to parsed data into `JSON` first
+
+```
+ btn.addEventListener('click', (event) => {
+  event.target.textContent = 'Loading...';
+  fetch(astrosUrl)
+    .then((response) => response.json())
+    .then(getProfiles)
+    .then(generateHTML)
+    .catch((err) => {
+      peopleList.innerHTML = '<h1>Something went wrong!</h1>';
+      console.log(err);
+    })
+    .finally(() => event.target.remove());
+});
+
+```
