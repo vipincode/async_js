@@ -1,4 +1,8 @@
-## Promise have three sare
+## What is Promise
+
+The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+
+## Promise have three state
 
 - 1: Pending- is default state of promise, somethim waiting waiting for
 - 2 Fullfill- Operation completed successfully
@@ -45,7 +49,22 @@ const breakfastPromise = new Promise((resolve, rejected) => {
 ### Reject method
 
 ```
+const order = false;
+
+const breakfastPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    if (order) {
+      resolve('Your order is ready. Come and get it!');
+    } else {
+      reject(Error('Oh! no there is a problen with your order.'));
+    }
+  }, 3000);
+});
+
+console.log(breakfastPromise);
+
 breakfastPromise
   .then((val) => console.log(val))
   .catch((err) => console.log(err));
+
 ```
