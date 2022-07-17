@@ -68,3 +68,23 @@ breakfastPromise
   .catch((err) => console.log(err));
 
 ```
+
+### promise.all()
+
+It is usefull when your program needs to wait resolve more than one promise.
+
+### finally
+
+- its called when promise fully settled
+- its take a function that's called when promise is setteled.
+
+```
+btn.addEventListener('click', (event) => {
+  event.target.textContent = 'Loading...';
+  getJSON(astrosUrl)
+    .then(getProfiles)
+    .then(generateHTML)
+    .catch((err) => console.log(err))
+    .finally(() => event.target.remove());
+});
+```
