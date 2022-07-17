@@ -111,3 +111,28 @@ once fetch make the request and data finish loading the fetch promise is `fullfi
 });
 
 ```
+
+# Async
+
+## async await introduce in ES2017 to further simplyfy how you work with promises.\
+
+- `async` and `await ` together provide special syntax to work with promises.
+- `async` and `await ` fundamently the same unserhood
+- `async` define asynchronus function you can mark any js function `async` like so
+- `await ` is wait for a promise, means wait for a resolve promise return bt `fetch` then get the full fillment value out of the promise. and assign to variable `response`.
+- once Promise resolve that is return by fetch, the fullfill value assign to response object
+- next parse the response to JSON [` const data = await response.json();`] this is also asyn and return a promise
+- once promise resolve it store into data and return that data.
+- bcs of asycn function always return promise so we can use the method here.
+
+```
+async function getData(url) {
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
+}
+```
+
+### Note
+
+Asyn function always return a promise
