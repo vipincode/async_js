@@ -133,6 +133,17 @@ async function getData(url) {
 }
 ```
 
+### Chain then method with async
+
+```
+btn.addEventListener('click', (event) => {
+  event.target.textContent = 'Loading...';
+  await getPeopleInSpace(astrosUrl)
+    .then(generateHTML)
+    .finally(() => event.target.remove());
+});
+```
+
 ### Note
 
 Asyn function always return a promise
