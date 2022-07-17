@@ -1,8 +1,8 @@
 ## Promise have three sare
 
-`1: Pending`: default state, somethim waiting waiting for
-`2: Fullfill`: Operation completed successfully
-`3: Rejected`: The operation failed.
+- 1: Pending- default state, somethim waiting waiting for
+- 2 Fullfill- Operation completed successfully
+- 3 Rejected- The operation failed.
 
 ## Working width promises
 
